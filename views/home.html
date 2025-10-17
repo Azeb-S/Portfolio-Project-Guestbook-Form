@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Link style -->
+    <!-- absoulte path -->
+    <!-- <link rel="stylesheet" href="../public/styles/style.css"> -->
+    <!--  path JSON -->
+    <link rel="stylesheet" href="/styles/style.css">
+    <!-- Link Script -->
+    <!--path JSON-->
+    <script src="/js/contact.js"></script>
+
+    <!-- absoulte path -->
+    <!-- <script src="../public/js/contact.js"></script> -->
+    <link rel="icon" type="image/x-icon" href="/images/contact-form.png">
+
+</head>
+
+<body>
+    <main>
+        <form id="contact-form" action="#" method="get">
+            <h1 class="card__title">Contact Form</h1>
+            <div class="main-grid grid-1">
+                <div class="field">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" class="input" name="fname">
+                </div>
+
+                <div class="field">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" class="input" name="lname">
+                </div>
+                <div class="field">
+                    <label for="jobt">Job Title</label>
+                    <input type="text" id="jobt" class="input" name="jobt">
+                </div>
+            </div>
+            <div class=" main-grid grid-1">
+                <div class="field">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" class="input" name="company">
+                </div>
+                <div class="field">
+                    <label for="lurl">LinkedIn URL</label>
+                    <input type="text" id="lurl" class="input" name="lurl">
+                </div>
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" class="input" name="email">
+                </div>
+            </div>
+            <div class=" main-grid grid-2">
+                <div class="field">
+                    <label for="meet">How did we meet?</label>
+                    <select id="meet" name="meet">
+            <option value="">Please select</option>
+            <option>Conference</option>
+            <option>Meetup</option>
+            <option>Class</option>
+            <option>Work</option>
+            <option>Referral</option>
+            <option>Online</option>
+            <option>Other</option>
+          </select>
+                </div>
+
+                <div class="field">
+                    <label for="other">Other (please specify)</label>
+                    <input id="other" name="other" type="text" />
+                </div>
+            </div>
+            <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6"></textarea>
+            </div>
+            <div class="check-field">
+                <label class="check">
+          <input type="checkbox" name="subscribe" />
+          <span>Please add me to your mailing list</span>
+        </label>
+            </div>
+            <div class="radio-field">
+
+                <legend>Choose an email format:</legend>
+                <label for="html" class="radio"><input type="radio" name="format" value="html" /> HTML</label>
+                <label for="text" class="radio"><input type="radio" name="format" value="text" /> Text</label>
+            </div>
+            <div class="submit">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+
+    </main>
+
+</body>
+
+</html>

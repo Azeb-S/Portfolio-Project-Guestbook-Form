@@ -1,0 +1,117 @@
+    body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: #111827;
+        background: #f5f7f8;
+        line-height: 1.45;
+    }
+    
+    main {
+        padding: 24px;
+        display: grid;
+        place-items: start center;
+        min-height: 100dvh;
+    }
+    
+    form {
+        width: min(100%, 960px);
+        background-color: #fff;
+        width: min(100%, 960px);
+        border-radius: 0.88rem;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+        padding: clamp(1.2rem, 3vw, 1.75rem);
+    }
+    
+    .field {
+        display: grid;
+        gap: 0.5rem;
+    }
+    
+    .main-grid {
+        display: grid;
+        gap: 0.5rem;
+        margin: 0.4rem 0 1.2rem;
+    }
+    
+    .grid-1 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin: 0.4rem 0 1.2rem;
+    }
+    
+    label {
+        font-weight: 600;
+    }
+    
+    .check-field {
+        margin: 0.5rem 0 0.4rem;
+    }
+    
+    .radio-field {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+    }
+    
+    input {
+        border: 0.1rem solid #4b5563;
+        border-radius: 8px;
+        padding: 0.3rem 0.5rem;
+        font: inherit;
+        background: #fff;
+    }
+    
+    select,
+    textarea {
+        width: 100%;
+        border: 0.1rem solid #4b5563;
+        border-radius: 8px;
+        padding: 0.3rem 0.5rem;
+        font: inherit;
+        background: #fff;
+    }
+    
+    .submit {
+        margin-top: 6px;
+    }
+    
+    button {
+        appearance: none;
+        border: none;
+        background: #22c55e;
+        color: #fff;
+        font-weight: 700;
+        padding: 0.3rem 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 0 rgba(0, 0, 0, .06);
+    }
+    
+    button:hover {
+        background: #16a34a;
+    }
+    
+    button:active {
+        transform: translateY(1px);
+    }
+    
+    @media (max-width: 980px) {
+        .grid-1 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .grid-1,
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+    }
