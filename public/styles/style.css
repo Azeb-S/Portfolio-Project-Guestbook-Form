@@ -83,6 +83,11 @@
         margin-top: 6px;
     }
     
+    .error {
+        color: darkred;
+        display: none;
+    }
+    
     button {
         appearance: none;
         border: none;
@@ -93,6 +98,14 @@
         border-radius: 8px;
         cursor: pointer;
         box-shadow: 0 2px 0 rgba(0, 0, 0, .06);
+    }
+    
+    #other-wrap {
+        display: none;
+    }
+    
+    #radio-field {
+        display: none;
     }
     
     button:hover {

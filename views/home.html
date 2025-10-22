@@ -28,11 +28,13 @@
                 <div class="field">
                     <label for="fname">First Name</label>
                     <input type="text" id="fname" class="input" name="fname">
+                    <span id="err-fname" class="error">First name cannot be empty!</span>
                 </div>
 
                 <div class="field">
                     <label for="lname">Last Name</label>
                     <input type="text" id="lname" class="input" name="lname">
+                    <span id="err-lname" class="error">First name cannot be empty!</span>
                 </div>
                 <div class="field">
                     <label for="jobt">Job Title</label>
@@ -47,50 +49,56 @@
                 <div class="field">
                     <label for="lurl">LinkedIn URL</label>
                     <input type="text" id="lurl" class="input" name="lurl">
+                    <span id="err-lurl" class="error">Please Enter the correct LinkedIn URL</span>
                 </div>
                 <div class="field">
                     <label for="email">Email Address</label>
                     <input type="text" id="email" class="input" name="email">
+                    <span id="err-email" class="error">Please enter a valid email.</span>
+                    <span id="err-emailc" class="error">Please enter an email.</span>
+
                 </div>
             </div>
             <div class=" main-grid grid-2">
                 <div class="field">
                     <label for="meet">How did we meet?</label>
                     <select id="meet" name="meet">
-            <option value="">Please select</option>
-            <option>Conference</option>
-            <option>Meetup</option>
-            <option>Class</option>
-            <option>Work</option>
-            <option>Referral</option>
-            <option>Online</option>
-            <option>Other</option>
+            <option value="none">Please select</option>
+            <option value="conference">Conference</option>
+            <option value="meetup">Meetup</option>
+            <option value="class">Class</option>
+            <option value="work">Work</option>
+            <option value="referral">Referral</option>
+            <option value="online">Online</option>
+            <option value="other">Other</option>
           </select>
+                    <span id="err-meet" class="error">Please select How we meet!</span>
                 </div>
 
-                <div class="field">
-                    <label for="other">Other (please specify)</label>
-                    <input id="other" name="other" type="text" />
+                <div class="field" id="other-wrap">
+                    <label for="other-input">Other (please specify)</label>
+                    <input id="other-input" name="otherinput" type="text" />
+                    <span id="err-other" class="error">Please specify how we met!</span>
                 </div>
             </div>
             <div class="field">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6"></textarea>
             </div>
-            <div class="check-field">
+            <div class="check-field" id="check-field">
                 <label class="check">
-          <input type="checkbox" name="subscribe" />
+          <input type="checkbox" id="mailingList" name="subscribe" />
           <span>Please add me to your mailing list</span>
         </label>
             </div>
-            <div class="radio-field">
+            <div class="radio-field" id="radio-field">
 
                 <legend>Choose an email format:</legend>
                 <label for="html" class="radio"><input type="radio" name="format" value="html" /> HTML</label>
                 <label for="text" class="radio"><input type="radio" name="format" value="text" /> Text</label>
             </div>
             <div class="submit">
-                <button type="submit" class="btn">Submit</button>
+                <button type="submit" id="contact-submit" class="btn">Submit</button>
             </div>
 
 
