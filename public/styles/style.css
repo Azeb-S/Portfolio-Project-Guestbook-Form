@@ -1,168 +1,188 @@
-    body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        color: #111827;
-        background: #f5f7f8;
-        line-height: 1.45;
-    }
-    
-    main {
-        padding: 24px;
-        display: grid;
-        place-items: start center;
-        min-height: 100dvh;
-    }
-    
-    form {
-        width: min(100%, 960px);
-        background-color: #fff;
-        width: min(100%, 960px);
-        border-radius: 0.88rem;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
-        padding: clamp(1.2rem, 3vw, 1.75rem);
-    }
-    
-    .field {
-        display: grid;
-        gap: 0.5rem;
-    }
-    
-    .main-grid {
-        display: grid;
-        gap: 0.5rem;
-        margin: 0.4rem 0 1.2rem;
-    }
-    
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    color: #111827;
+    background: #f5f7f8;
+    line-height: 1.45;
+}
+
+main {
+    padding: 24px;
+    display: grid;
+    place-items: start center;
+    min-height: 100dvh;
+}
+
+.main-confirmation {
+    padding: 30px;
+    display: grid;
+    place-items: start center;
+    min-height: 100dvh;
+    align-items: baseline;
+    justify-items: stretch;
+}
+
+.link-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+form {
+    width: min(100%, 960px);
+    background-color: #fff;
+    width: min(100%, 960px);
+    border-radius: 0.88rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    padding: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+.field {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.main-grid {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0.4rem 0 1.2rem;
+}
+
+.grid-1 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin: 0.4rem 0 1.2rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+.check-field {
+    margin: 0.5rem 0 0.4rem;
+}
+
+.radio-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+input {
+    border: 0.1rem solid #4b5563;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    font: inherit;
+    background: #fff;
+}
+
+select,
+textarea {
+    width: 100%;
+    border: 0.1rem solid #4b5563;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    font: inherit;
+    background: #fff;
+}
+
+.submit {
+    margin-top: 6px;
+}
+
+.error {
+    color: darkred;
+    display: none;
+}
+
+button {
+    appearance: none;
+    border: none;
+    background: #22c55e;
+    color: #fff;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .06);
+}
+
+#other-wrap {
+    display: none;
+}
+
+#emailblock {
+    display: none;
+}
+
+#radio-field {
+    display: none;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.github-link {
+    text-align: center;
+    margin-top: 1.25rem;
+    /* 20px */
+}
+
+.github-link a {
+    display: inline-block;
+    background-color: #fff;
+    /* GitHub dark gray */
+    color: #111827;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+    border-radius: 0.5rem;
+    /* 8px */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.2s;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.15);
+    /* 2px 5px */
+}
+
+h3 {
+    background-color: #fff;
+    /* GitHub dark gray */
+    color: #111827;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+    border-radius: 0.5rem;
+}
+
+.github-link a:hover {
+    background-color: #333d47;
+    transform: translateY(-0.125rem);
+    color: #fff;
+    /* 2px */
+}
+
+@media (max-width: 980px) {
     .grid-1 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .grid-2 {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    h1 {
-        text-align: center;
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
-        margin: 0.4rem 0 1.2rem;
+}
+
+@media (max-width: 640px) {
+    .grid-1,
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
-    
-    label {
-        font-weight: 600;
-    }
-    
-    .check-field {
-        margin: 0.5rem 0 0.4rem;
-    }
-    
-    .radio-field {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-    }
-    
-    input {
-        border: 0.1rem solid #4b5563;
-        border-radius: 8px;
-        padding: 0.3rem 0.5rem;
-        font: inherit;
-        background: #fff;
-    }
-    
-    select,
-    textarea {
-        width: 100%;
-        border: 0.1rem solid #4b5563;
-        border-radius: 8px;
-        padding: 0.3rem 0.5rem;
-        font: inherit;
-        background: #fff;
-    }
-    
-    .submit {
-        margin-top: 6px;
-    }
-    
-    .error {
-        color: darkred;
-        display: none;
-    }
-    
-    button {
-        appearance: none;
-        border: none;
-        background: #22c55e;
-        color: #fff;
-        font-weight: 700;
-        padding: 0.3rem 0.5rem;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 2px 0 rgba(0, 0, 0, .06);
-    }
-    
-    #other-wrap {
-        display: none;
-    }
-    
-    #radio-field {
-        display: none;
-    }
-    
-    button:hover {
-        background: #16a34a;
-    }
-    
-    button:active {
-        transform: translateY(1px);
-    }
-    
-    .github-link {
-        text-align: center;
-        margin-top: 1.25rem;
-        /* 20px */
-    }
-    
-    .github-link a {
-        display: inline-block;
-        background-color: #fff;
-        /* GitHub dark gray */
-        color: #111827;
-        padding: 0.625rem 1.25rem;
-        /* 10px 20px */
-        border-radius: 0.5rem;
-        /* 8px */
-        text-decoration: none;
-        font-weight: 600;
-        transition: background-color 0.2s, transform 0.2s;
-        box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.15);
-        /* 2px 5px */
-    }
-    
-    h3 {
-        background-color: #fff;
-        /* GitHub dark gray */
-        color: #111827;
-        padding: 0.625rem 1.25rem;
-        /* 10px 20px */
-        border-radius: 0.5rem;
-    }
-    
-    .github-link a:hover {
-        background-color: #333d47;
-        transform: translateY(-0.125rem);
-        color: #fff;
-        /* 2px */
-    }
-    
-    @media (max-width: 980px) {
-        .grid-1 {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    
-    @media (max-width: 640px) {
-        .grid-1,
-        .grid-2 {
-            grid-template-columns: 1fr;
-        }
-    }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <!-- Link style -->
+    <!-- absoulte path -->
+    <!-- <link rel="stylesheet" href="../public/styles/style.css"> -->
+    <!-- Link Script -->
+    <!--path JSON-->
+    <!-- <script src="js/contact.js" defer></script> -->
+    <script src="//code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="//cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            new DataTable('#summary_table', {
+                // optional configs:
+                // responsive: true,
+                // pageLength: 10
+            });
+        });
+    </script>
+    <!-- absoulte path -->
+    <!-- <script src="../public/js/contact.js"></script> -->
+    <link rel="icon" type="image/x-icon" href="/images/contact-form.png">
+
+    <link rel="stylesheet" href="//cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
+
+    <!--  path JSON -->
+    <link rel="stylesheet" href="/styles/style.css">
+
+
+</head>
+
+<body>
+    <main>
+        <h1>Welcome To Admin Page!</h1>
+        <table id="summary_table" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>LinkedIn URL</th>
+                    <th>Email Address</th>
+                    <th>How did we meet?</th>
+                    <th>How did we meet? Other</th>
+                    <th>Message</th>
+                    <th>Add me to email List</th>
+                    <th>Email Format</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <!-- fname  lname  jobt company lurl  email meet other-input message mailingList html-->
+                <% orders.forEach(order => { %>
+                    <tr>
+                        <td>
+                            <%= order.fname %>
+                                <%= order.lname %>
+                        </td>
+                        <td>
+                            <%= order.jobt %>
+                        </td>
+                        <td>
+                            <%= order.company %>
+                        </td>
+                        <td>
+                            <%= order.lurl %>
+                        </td>
+                        <td>
+                            <%= order.email %>
+                        </td>
+                        <td>
+                            <%= order.meet %>
+                        </td>
+                        <td>
+                            <%= order.otherinput %>
+                        </td>
+                        <td>
+                            <%= order.message %>
+                        </td>
+
+                        <td>
+                            <%= order.subscribe ? 'Yes' : 'No' %>
+                        </td>
+                        <td>
+                            <%= order.format ? order.format.toUpperCase() : '—' %>
+                        </td>
+
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <div class="link-btn">
+            <div class="github-link">
+                <a href="/"> 
+              Back To Home Page
+                </a>
+            </div>
+            <div class="github-link">
+                <a href="/confirmation"> 
+             Go to Confirmation Page 
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
