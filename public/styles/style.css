@@ -6,11 +6,48 @@ body {
     line-height: 1.45;
 }
 
+
+/* === Admin Page Styles === */
+
+.admin-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.admin-main h1 {
+    color: var(--primary);
+    /* your deep ocean blue */
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    /* space between heading and table */
+}
+
+.card__title {
+    text-align: center;
+}
+
 main {
     padding: 24px;
     display: grid;
     place-items: start center;
     min-height: 100dvh;
+}
+
+
+/* Center the contact form horizontally */
+
+
+/* optional: center the heading above it */
+
+.contact-page h1 {
+    text-align: center;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
 }
 
 .main-confirmation {
@@ -30,7 +67,9 @@ main {
 }
 
 form {
-    width: min(100%, 960px);
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 0;
     background-color: #fff;
     width: min(100%, 960px);
     border-radius: 0.88rem;
@@ -39,6 +78,7 @@ form {
 }
 
 .field {
+    min-width: 0;
     display: grid;
     gap: 0.5rem;
 }
@@ -83,16 +123,31 @@ input {
     padding: 0.3rem 0.5rem;
     font: inherit;
     background: #fff;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-select,
-textarea {
+select {
     width: 100%;
+    box-sizing: border-box;
     border: 0.1rem solid #4b5563;
     border-radius: 8px;
     padding: 0.3rem 0.5rem;
     font: inherit;
     background: #fff;
+    resize: vertical;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 0.1rem solid #4b5563;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    font: inherit;
+    height: 70px;
+    background: #fff;
+    resize: vertical;
 }
 
 .submit {

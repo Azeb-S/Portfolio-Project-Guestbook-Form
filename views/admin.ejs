@@ -36,78 +36,74 @@
 </head>
 
 <body>
-    <main>
-        <h1>Welcome To Admin Page!</h1>
-        <table id="summary_table" class="display">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Job Title</th>
-                    <th>Company</th>
-                    <th>LinkedIn URL</th>
-                    <th>Email Address</th>
-                    <th>How did we meet?</th>
-                    <th>How did we meet? Other</th>
-                    <th>Message</th>
-                    <th>Add me to email List</th>
-                    <th>Email Format</th>
-                </tr>
+    <%- include('partials/nav') %>
+        <header>
+            <h1 class="admin-title">Welcome To Admin Page!</h1>
+        </header>
+        <main cclass="admin-main">
 
-            </thead>
-            <tbody>
-                <!-- fname  lname  jobt company lurl  email meet other-input message mailingList html-->
-                <% orders.forEach(order => { %>
+            <table id="summary_table" class="display">
+                <thead>
                     <tr>
-                        <td>
-                            <%= order.fname %>
-                                <%= order.lname %>
-                        </td>
-                        <td>
-                            <%= order.jobt %>
-                        </td>
-                        <td>
-                            <%= order.company %>
-                        </td>
-                        <td>
-                            <%= order.lurl %>
-                        </td>
-                        <td>
-                            <%= order.email %>
-                        </td>
-                        <td>
-                            <%= order.meet %>
-                        </td>
-                        <td>
-                            <%= order.otherinput %>
-                        </td>
-                        <td>
-                            <%= order.message %>
-                        </td>
-
-                        <td>
-                            <%= order.subscribe ? 'Yes' : 'No' %>
-                        </td>
-                        <td>
-                            <%= order.format ? order.format.toUpperCase() : '—' %>
-                        </td>
-
+                        <th>Name</th>
+                        <th>Job Title</th>
+                        <th>Company</th>
+                        <th>LinkedIn URL</th>
+                        <th>Email Address</th>
+                        <th>How did we meet?</th>
+                        <th>How did we meet? Other</th>
+                        <th>Message</th>
+                        <th>Add me to email List</th>
+                        <th>Email Format</th>
                     </tr>
-                    <% }); %>
-            </tbody>
-        </table>
-        <div class="link-btn">
-            <div class="github-link">
-                <a href="/"> 
-              Back To Home Page
-                </a>
-            </div>
-            <div class="github-link">
-                <a href="/confirmation"> 
-             Go to Confirmation Page 
-                </a>
-            </div>
-        </div>
-    </main>
+
+                </thead>
+                <tbody>
+                    <!-- fname  lname  jobt company lurl  email meet other-input message mailingList html-->
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td>
+                                <%= order.fname %>
+                                    <%= order.lname %>
+                            </td>
+                            <td>
+                                <%= order.jobt %>
+                            </td>
+                            <td>
+                                <%= order.company %>
+                            </td>
+                            <td>
+                                <%= order.lurl %>
+                            </td>
+                            <td>
+                                <%= order.email %>
+                            </td>
+                            <td>
+                                <%= order.meet %>
+                            </td>
+                            <td>
+                                <%= order.otherinput %>
+                            </td>
+                            <td>
+                                <%= order.message %>
+                            </td>
+
+                            <td>
+                                <%= order.subscribe ? 'Yes' : 'No' %>
+                            </td>
+                            <td>
+                                <%= order.format ? order.format.toUpperCase() : '—' %>
+                            </td>
+
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+
+        </main>
+        <footer>
+            <%- include('partials/footer') %>
+        </footer>
 </body>
 
 </html>

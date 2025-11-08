@@ -5,6 +5,7 @@ import express from 'express'
 const app = express()
 
 //Set EJS as view engine
+// app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 // Enable static file serving
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
  // Send a response to the client
 
  //res.sendFile(`${import.meta.dirname}/views/home.html`)
- res.render('home')
+ res.render('index')
 })
 
 //Define an admin route
@@ -34,12 +35,19 @@ app.get('/admin', (req, res) => {
  res.render('admin', { orders })
 
 })
+// CONTACT PAGE route
+app.get('/contact', (req, res) => {
+
+ res.render('contact')
+})
 
 // Define the submit route
 app.post('/submit-order', (req, res) => {
  //create a JSON object to store the data
 
  const order = req.body
+ order.timestamp = new Date()
+
  orders.push(order)
  console.log(orders)
 

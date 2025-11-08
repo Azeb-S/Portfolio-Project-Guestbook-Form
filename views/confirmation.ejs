@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="../public/styles/style.css"> -->
     <!--  path JSON -->
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style-resume.css">
     <!-- Link Script -->
     <!--path JSON-->
     <script src="/js/contact.js"></script>
@@ -20,60 +21,58 @@
 
 </head>
 
+
 <body>
-    <main class="main-confirmation">
+    <%- include('partials/nav') %>
         <h1>Thank You For Your Request
             <%= order.fname %>!
         </h1>
-        <!-- fname  lname  jobt company lurl  email meet other-input message mailingList html-->
-        <div>
-            <h2>Contact Summary</h2>
-            <p>Name:
-                <%= order.fname %>
-                    <%= order.lname %>
-            </p>
-            <p>Job Title:
-                <%= order.jobt %>
-            </p>
-            <p>Company:
-                <%= order.company %>
-            </p>
-            <p>LinkedIn:
-                <%= order.lurl %>
-            </p>
-            <p>Email:
-                <%= order.email %>
-            </p>
-            <p>How We Meet:
-                <%= order.meet %>
-            </p>
-            <p>Other:
-                <%= order.otherinput %>
-            </p>
-            <p>Message:
-                <%= order.message %>
-            </p>
-            <p>Add Me To Email List:
-                <%= order.subscribe ? 'Yes' : 'No' %>
-            </p>
-            <p>Email Format:
-                <%= order.format ? order.format.toUpperCase() : '—' %>
-            </p>
-        </div>
-        <div class="link-btn">
-            <div class="github-link">
-                <a href="/"> 
-              Back To Home Page
-                </a>
-            </div>
-            <div class="github-link">
-                <a href="/admin"> 
-             Go to Admin Page 
-                </a>
-            </div>
-        </div>
+        <main class="main-confirmation">
 
-    </main>
+            <!-- fname  lname  jobt company lurl  email meet other-input message mailingList html-->
+            <div>
+                <h2>Contact Summary</h2>
+                <p>Name:
+                    <%= order.fname %>
+                        <%= order.lname %>
+                </p>
+                <p>Job Title:
+                    <%= order.jobt %>
+                </p>
+                <p>Company:
+                    <%= order.company %>
+                </p>
+                <p>LinkedIn:
+                    <%= order.lurl %>
+                </p>
+                <p>Email:
+                    <%= order.email %>
+                </p>
+                <p>How We Meet:
+                    <%= order.meet %>
+                </p>
+                <p>Other:
+                    <%= order.otherinput %>
+                </p>
+                <p>Message:
+                    <%= order.message %>
+                </p>
+                <p>Add Me To Email List:
+                    <%= order.subscribe ? 'Yes' : 'No' %>
+                </p>
+                <p>Email Format:
+                    <%= order.format ? order.format.toUpperCase() : '—' %>
+                </p>
+                <p>Date/Time:
+                    <%= order.timestamp.toLocaleString() %>
+                </p>
+            </div>
+
+
+        </main>
 </body>
+<footer>
+    <%- include('partials/footer') %>
+</footer>
 
 </html>
