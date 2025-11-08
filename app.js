@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
  // Send a response to the client
 
  //res.sendFile(`${import.meta.dirname}/views/home.html`)
- res.render('index')
+ res.render('home')
 })
 
 //Define an admin route
