@@ -1,5 +1,18 @@
-//Import The express
+//Import The module
 import express from 'express'
+import mysql2 from 'mysql2'
+import dotenv from 'dotenv'
+
+// Load the variables from .env file
+dotenv.config()
+const pool = mysql2.createPool({
+ host: process.env.DB_HOST,
+ user: process.env.DB_USER,
+ password: process.env.DB_PASSWORD,
+ database: process.env.DB_NAME,
+ port: process.env.DB_PORT
+}).promise()
+
 
 //Create an instance of an Express application 
 const app = express()
@@ -30,28 +43,63 @@ app.get('/', (req, res) => {
  res.render('home')
 })
 
-//Define an admin route
-app.get('/admin', (req, res) => {
- res.render('admin', { orders })
 
-})
 // CONTACT PAGE route
 app.get('/contact', (req, res) => {
 
  res.render('contact')
 })
 
-// Define the submit route
-app.post('/submit-order', (req, res) => {
- //create a JSON object to store the data
+//Define an admin route
+app.get('/admin', async (req, res) => {
+ try {
+  const [orders] = await
+   pool.query('SELECT * FROM contacts ORDER BY timestamp DESC')
 
+  res.render('admin', { orders })
+
+ } catch (err) {
+  console.error('Database error:', err)
+ }
+})
+// Define the submit route
+app.post('/submit-order', async (req, res) => {
+
+ //create a JSON object to store the data
  const order = req.body
  order.timestamp = new Date()
 
- orders.push(order)
- console.log(orders)
+ //Write a query to insert order into DB
+ const sql = "INSERT INTO contacts (fname,lname,jobt,company,lurl,email,meet,otherinput,message,subscribe,format) VALUES(?,?,?,?,?,?,?,?,?,?,?)"
 
- res.render('confirmation', { order })
+ console.log(orders)
+ //Create array of Parameters of each placeholder
+ const params = [
+  order.fname,
+  order.lname,
+  order.jobt,
+  order.company,
+  order.lurl,
+  order.email,
+  order.meet,
+  order.otherinput,
+  order.message,
+  order.subscribe,
+  order.format
+ ]
+ try {
+  const [result] = await pool.execute(sql, params)
+
+  //Send User to confirmation page
+  res.render('confirmation', { order })
+
+ } catch (err) {
+
+  console.log("Database Error")
+
+ }
+
+
 
 })
 
