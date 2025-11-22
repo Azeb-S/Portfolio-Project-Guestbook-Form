@@ -54,7 +54,7 @@ app.get('/contact', (req, res) => {
 app.get('/admin', async (req, res) => {
  try {
   const [orders] = await
-   pool.query('SELECT * FROM contacts ORDER BY timestamp DESC')
+   pool.query('SELECT * FROM contacts ORDER BY created_at  DESC')
 
   res.render('admin', { orders })
 
@@ -71,6 +71,10 @@ app.post('/submit-order', async (req, res) => {
 
  //Write a query to insert order into DB
  const sql = "INSERT INTO contacts (fname,lname,jobt,company,lurl,email,meet,otherinput,message,subscribe,format) VALUES(?,?,?,?,?,?,?,?,?,?,?)"
+
+ // Map checkbox + radio properly
+ const subscribe = req.body.subscribe ? 'yes' : 'no'  // checkbox
+ const format = req.body.format || null               // radio, can be null
 
  console.log(orders)
  //Create array of Parameters of each placeholder
@@ -95,7 +99,8 @@ app.post('/submit-order', async (req, res) => {
 
  } catch (err) {
 
-  console.log("Database Error")
+  console.log("Database Error", err)
+  res.status(500).send('Database error')
 
  }
 
