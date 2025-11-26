@@ -89,7 +89,7 @@
                             </td>
 
                             <td>
-                                <%= order.subscribe ? 'Yes' : 'No' %>
+                                <%= order.subscribe === 'yes'? 'Yes' : 'No' %>
                             </td>
                             <td>
                                 <%= order.format ? order.format.toUpperCase() : '—' %>

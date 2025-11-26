@@ -69,12 +69,19 @@ app.post('/submit-order', async (req, res) => {
  const order = req.body
  order.timestamp = new Date()
 
+ // Canonical checkbox logic
+ const subscribeChecked = req.body.subscribe === 'yes'
+ order.subscribe = subscribeChecked ? 'yes' : 'no'
+
+ // Canonical format logic
+ // If they didn’t subscribe, ignore any format and store null
+ const chosenFormat = subscribeChecked ? (req.body.format || null) : null
+ order.format = chosenFormat
+
+
  //Write a query to insert order into DB
  const sql = "INSERT INTO contacts (fname,lname,jobt,company,lurl,email,meet,otherinput,message,subscribe,format) VALUES(?,?,?,?,?,?,?,?,?,?,?)"
 
- // Map checkbox + radio properly
- const subscribe = req.body.subscribe ? 'yes' : 'no'  // checkbox
- const format = req.body.format || null               // radio, can be null
 
  console.log(orders)
  //Create array of Parameters of each placeholder
@@ -88,10 +95,13 @@ app.post('/submit-order', async (req, res) => {
   order.meet || null,
   order.otherinput || null,
   order.message || null,
-  subscribe,
-  format
+  order.subscribe,
+  order.format
  ]
  try {
+  console.log('REQ BODY:', req.body)
+  console.log('ORDER.SUBSCRIBE:', order.subscribe)
+
   const [result] = await pool.execute(sql, params)
 
   //Send User to confirmation page

@@ -58,7 +58,7 @@
                     <%= order.message %>
                 </p>
                 <p>Add Me To Email List:
-                    <%= order.subscribe ? 'Yes' : 'No' %>
+                    <%= order.subscribe === 'yes' ? 'Yes' : 'No' %>
                 </p>
                 <p>Email Format:
                     <%= order.format ? order.format.toUpperCase() : '—' %>
