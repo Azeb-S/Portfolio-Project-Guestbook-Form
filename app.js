@@ -88,8 +88,8 @@ app.post('/submit-order', async (req, res) => {
   order.meet,
   order.otherinput,
   order.message,
-  order.subscribe,
-  order.format
+  subscribe,
+  format
  ]
  try {
   const [result] = await pool.execute(sql, params)

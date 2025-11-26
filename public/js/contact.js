@@ -48,19 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    // EMAIL VALIDATION (correct)
+
     if (mailingList.checked) {
 
+      // Email REQUIRED
       if (!email) {
         document.getElementById("err-emailc").style.display = "block"
         isValid = false
+      } else if (!email.includes("@") || !email.includes(".")) {
+        document.getElementById("err-email").style.display = "block"
+        isValid = false
       }
+
     } else {
 
+      // Email OPTIONAL — validate only if typed
       if (email && (!email.includes("@") || !email.includes("."))) {
         document.getElementById("err-email").style.display = "block"
         isValid = false
       }
+
     }
+
+
+
 
     //LinkedIn address is optional. If one is provided, it must start with "https://linkedin.com/in/"
 
