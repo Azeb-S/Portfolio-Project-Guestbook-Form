@@ -79,15 +79,15 @@ app.post('/submit-order', async (req, res) => {
  console.log(orders)
  //Create array of Parameters of each placeholder
  const params = [
-  order.fname,
-  order.lname,
-  order.jobt,
-  order.company,
-  order.lurl,
-  order.email,
-  order.meet,
-  order.otherinput,
-  order.message,
+  order.fname || null,
+  order.lname || null,
+  order.jobt || null,
+  order.company || null,
+  order.lurl || null,
+  order.email || null,
+  order.meet || null,
+  order.otherinput || null,
+  order.message || null,
   subscribe,
   format
  ]
